@@ -59,7 +59,21 @@ traverseTree() {
 }
 
 printHelp() {
-    echo "help..."
+echo "
+mdtoweb.sh [options] sourceDirectory buildDirectory
+
+OPTIONS
+-h, --help    Print help and quit.
+-f, --force   Overwrite the ouput files.
+-w, --watch   Wait for changes and continuously translate modifed source files. 
+
+POSITIONAL ARGUMENTS
+sourceDirectory     Path to the root of the source subtree.
+buildDirectory      Path to a directory where the html files should be placed.
+
+Examples of usage:  mdtoweb.sh examples/src examples/build
+                    mdtoweb.sh --watch examples/src examples/build
+"
 }
 
 while [ $# -gt 0 ]; do
